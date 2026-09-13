@@ -8,7 +8,7 @@ import re
 import tempfile
 from typing import Optional
 
-import librosa
+import librosa #là một thư viện Python dùng để xử lý tín hiệu âm thanh và âm nhạc
 import numpy as np
 import soundfile as sf
 from fastapi import FastAPI, HTTPException
