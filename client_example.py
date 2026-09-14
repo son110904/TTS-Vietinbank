@@ -17,7 +17,7 @@ def tts_default_voice(text: str, out_path: str = "output.wav"):
 def tts_custom_voice(text: str, ref_audio_path: str, out_path: str = "output_cloned.wav"):
     """Clone giọng theo 1 file audio mẫu tự cung cấp."""
     with open(ref_audio_path, "rb") as f:
-        ref_b64 = base64.b64encode(f.read()).decode("utf-8")
+        ref_b64 = base64.b64encode(f.read()).decode("utf-8") #file âm thanh là binary, không gửi bằng json đc nên phải chuyển ra ascii bằng base64 để gửi
     resp = requests.post(
         f"{API_URL}/tts",
         json={"text": text, "ref_audio_base64": ref_b64},

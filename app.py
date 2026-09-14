@@ -49,7 +49,7 @@ def split_into_chunks(text: str, max_chars: int = CHUNK_MAX_CHARS) -> list[str]:
 
 def trim_silence(audio: np.ndarray, sr: int) -> np.ndarray:
     """Cắt bỏ khoảng lặng thừa ở đầu/cuối 1 đoạn audio."""
-    trimmed, _ = librosa.effects.trim(audio, top_db=TRIM_TOP_DB)
+    trimmed, _ = librosa.effects.trim(audio, top_db=TRIM_TOP_DB) #bỏ ngưỡng thấp hơn 30dB
     return trimmed
 
 def synthesize_long_text(text: str, ref_audio: str, denoise: bool) -> np.ndarray:
