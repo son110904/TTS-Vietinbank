@@ -2,4 +2,9 @@ fastapi
 uvicorn[standard]
 pydantic
 soundfile
+librosa
+torch
+torchaudio
+transformers
+safetensors
 vieneu
